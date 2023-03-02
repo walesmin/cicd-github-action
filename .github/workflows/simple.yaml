@@ -1,0 +1,13 @@
+name: Simple Continuous Integration
+
+on: [push]
+
+jobs: 
+  run-shell-commands:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: echo a string
+        run: echo "Hello GitHub Action!!"
+      - name: Java Check
+        run: java --version
