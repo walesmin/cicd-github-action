@@ -19,6 +19,12 @@ dependencies {
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }
 
-tasks.named('test') {
+task acceptanceTest(type: Test) {
+	include '**/acceptance/**'
+	systemProperties System.getProperties()
+}
+
+test {
 	useJUnitPlatform()
+	systemProperty "calculator.url", System.getProperty("calculator.url")
 }
