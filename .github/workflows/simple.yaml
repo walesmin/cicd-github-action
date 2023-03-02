@@ -3,7 +3,7 @@ name: Simple Continuous Integration
 on: [push]
 
 jobs: 
-  run-shell-commands:
+  test:
     runs-on: ubuntu-latest
   
     steps:
@@ -11,3 +11,16 @@ jobs:
         run: echo "Hello GitHub Action!!"
       - name: Java Check
         run: java --version
+      - uses: actions/checkout@v3
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - name: Java Check
+        run: java --version
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew test
+    
