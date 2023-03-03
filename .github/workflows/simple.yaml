@@ -1,6 +1,7 @@
 name: Simple Continuous Integration
 
 on:
+  workflow_dispatch: {}
   push:
     branches: [main]
 
