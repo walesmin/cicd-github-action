@@ -1,4 +1,4 @@
-name: Simple Continuous Integration
+name: Simple Continuous Integration with Unit Test
 
 on:
   workflow_dispatch: {}
