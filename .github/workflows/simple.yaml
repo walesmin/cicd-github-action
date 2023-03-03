@@ -22,7 +22,7 @@ jobs:
         run: java --version
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Unit and acceptance Test with Gradle
+      - name: Unit and Acceptance Test with Gradle
         run: ./gradlew test -Dcalculator.url=http://localhost
 
     
