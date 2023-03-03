@@ -21,10 +21,12 @@ dependencies {
 
 task acceptanceTest(type: Test) {
 	include '**/acceptance/**'
-	systemProperties System.getProperties()
+	systemProperty "calculator.url", System.getProperty("calculator.url")
+	useJUnitPlatform()
 }
 
 test {
-	useJUnitPlatform()
+	exclude '**/acceptance/**'
 	systemProperty "calculator.url", System.getProperty("calculator.url")
+	useJUnitPlatform()
 }

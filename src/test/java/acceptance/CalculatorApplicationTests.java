@@ -1,5 +1,6 @@
-package kr.eztolearn.calculator;
+package acceptance;
 
+import kr.eztolearn.calculator.CalculatorApplication;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,6 @@ class CalculatorApplicationTests {
 
 	@Test
 	void goHome() {
-		System.out.println(server);
 		String result = testRestTemplate.getForObject(server+":"+randomServerPort, String.class);
 		assertEquals("Welcome GitHub Action Home", result);
 	}
