@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs: 
-  unit-accpetance-test:
+  unit-acceptance-test:
     runs-on: ubuntu-latest
   
     steps:
