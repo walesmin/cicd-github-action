@@ -1,7 +1,6 @@
 name: Simple Continuous Integration with Unit Test
 
 on:
-  workflow_dispatch: {}
   push:
     branches: [main]
 
