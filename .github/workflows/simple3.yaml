@@ -51,6 +51,25 @@ jobs:
         run: zip -r ./ez2learn-calc.zip .
       - name: check files 
         run: ls -l
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+      # 깃허브 Secret에 넣어둔 Access key
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      # 깃허브 Secret에 넣어둔 Secret key
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      # 깃허브 Secret에 넣어둔 Region
+          aws-region: ${{ env.AWS_REGION }}
+      # 만들어 놓은 S3에 해당 zip 파일 저장
+      #- name: Upload to S3
+      # run: aws s3 cp --region ${{ env.AWS_REGION }} ./ez2learn-calc.zip s3://env.S3_BUCKET_NAME/ez2learn-calc.zip.zip
+      - name: Upload to AWS S3
+        run: |
+          aws deploy push \
+            --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
+            --ignore-hidden-files \
+            --s3-location s3://$S3_BUCKET_NAME/$GITHUB_SHA.zip \
+            --source .
     
 
     
