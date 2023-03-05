@@ -61,7 +61,7 @@ jobs:
       # 깃허브 Secret에 넣어둔 Region
           aws-region: ${{ env.AWS_REGION }}
       # 만들어 놓은 S3에 해당 zip 파일 저장
-      #- name: Upload to S3
+      #- name: Upload to S3 plz
       # run: aws s3 cp --region ${{ env.AWS_REGION }} ./ez2learn-calc.zip s3://env.S3_BUCKET_NAME/ez2learn-calc.zip.zip
       - name: Upload to AWS S3
         run: |
