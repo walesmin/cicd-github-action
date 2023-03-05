@@ -9,7 +9,7 @@ class CalculatorController {
 
     @RequestMapping("/")
     public String home() {
-        return "Welcome GitHub Action Home!!!";
+        return "Welcome GitHub Action Home!";
     }
 
     @RequestMapping("/sum")
