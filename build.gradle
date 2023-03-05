@@ -23,10 +23,6 @@ jar {
     enabled = false
 }
 
-tasks.getByName<Jar>("jar") {
-    enabled = false
-}
-
 task acceptanceTest(type: Test) {
 	include '**/acceptance/**'
 	systemProperty "calculator.url", System.getProperty("calculator.url")
