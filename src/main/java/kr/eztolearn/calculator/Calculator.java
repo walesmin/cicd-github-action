@@ -18,5 +18,10 @@ public class Calculator {
         this.sum = a + b;
         return this.sum;
     }
+    public int getDifference() {
+        this.result = a - b;
+        return this.result;
+    }
+
 
 }

@@ -13,5 +13,10 @@ class CalculatorTest {
     public void testSum() {
         assertEquals(5, calculator.getSum());
     }
+    
+    @Test
+    public void testDifference() {
+        assertEquals(-1, calculator.getDifference());
+    }
 
 }

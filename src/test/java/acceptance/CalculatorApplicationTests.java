@@ -29,5 +29,12 @@ class CalculatorApplicationTests {
 		String result = testRestTemplate.getForObject(server+":"+randomServerPort, String.class);
 		assertEquals("Welcome GitHub Action Home!", result);
 	}
+	
+	@Test
+	void getDiff() {
+  	int result = testRestTemplate.getForObject(server+":" + randomServerPort + "/diff?a=5&b=10", Integer.class);
+	assertEquals(-5, result);
+	}
+
 
 }
